@@ -16,5 +16,30 @@ namespace COMP123_S2019_Lesson9B
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// This is the shared event handler for all the calculator buttons
+       
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CalculatorButton_Click(object sender, EventArgs e)
+        {
+
+            var TheButton = sender as Button;
+            int buttonValue;
+            bool resultCondition = int.TryParse(TheButton.Text, out buttonValue);
+            if (resultCondition)
+
+            {
+                ResultLabel.Text += TheButton.Text;
+            }
+            else
+                {
+                //ResultLable.Text = "Not a Number (NAN)";
+
+            }
+        }
+
+        
     }
 }
